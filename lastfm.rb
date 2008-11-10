@@ -53,7 +53,7 @@ responses = response.body.split("\n")
 # puts responses.inspect
 @scrobble_session_id = responses[1]
 @submission_url = responses[3]
-print responses.inspect
+# print responses.inspect
 # submission
 def submit(artist,title)
   response = Net::HTTP.post_form(URI.parse(@submission_url), {

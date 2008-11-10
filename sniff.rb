@@ -14,8 +14,7 @@ for p in $network
   # if $filter =~ p
     if p && p.respond_to?(:tcp_data) && p.tcp_data && (title = p.tcp_data.match(/.+<ttitle>(.+?)<\/ttitle>.+/)) && (artist = p.tcp_data.match(/.+<tartist id=".+">(.+?)<\/tartist>.+/))
       if title && artist
-        print artist[1]
-        print title[1]
+        print "#{artist[1]}: #{title[1]}: "
         submit(artist[1], title[1])
       end
     end
