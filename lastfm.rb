@@ -42,8 +42,6 @@ unless config["lastfmlogin"] && (username = config["lastfmlogin"]["username"]) &
   puts "LASTFM USER KEY: #{key}"
 end
 
-
-
 # handshake
 timestamp = Time.now.utc.to_i.to_s
 authentication_token = Digest::MD5.hexdigest(SECRET + timestamp)
@@ -68,6 +66,5 @@ def submit(artist,title)
     'n[0]' => '',
     'm[0]' => ''
   })
-
   puts response.body
 end
