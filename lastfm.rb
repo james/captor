@@ -28,7 +28,7 @@ def get_xml_tag(tagname, body)
   body.match(r)[1]
 end
 
-unless username = config["lastfmlogin"]["username"] && key = config["lastfmlogin"]["key"]
+unless config["lastfmlogin"] && (username = config["lastfmlogin"]["username"]) && key = (config["lastfmlogin"]["key"])
   request_token =  get_xml_tag("token", call_last_fm("method" => "auth.gettoken"))
   
   puts "Please visit:"
