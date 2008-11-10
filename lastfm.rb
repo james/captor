@@ -7,7 +7,6 @@ require 'uri'
 
 APIKEY = config["lastfm"]["apikey"]
 SECRET = config["lastfm"]["secret"]
-KEY = config["lastfm"]["key"]
 
 def call_last_fm(parameters={})
   parameters["api_key"] = APIKEY
